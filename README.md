@@ -1,296 +1,184 @@
-# Context Engineering Template
+# Template Generator - Meta-Framework for Context Engineering
 
-A comprehensive template for getting started with Context Engineering - the discipline of engineering context for AI coding assistants so they have the information necessary to get the job done end to end.
-
-> **Context Engineering is 10x better than prompt engineering and 100x better than vibe coding.**
+This template generator creates complete context engineering template packages for any technology domain. It's a meta-template that generates specialized templates for frameworks like Pydantic AI, Supabase, CrewAI, etc.
 
 ## 🚀 Quick Start
 
 ```bash
-# 1. Clone this template
-git clone https://github.com/coleam00/Context-Engineering-Intro.git
-cd Context-Engineering-Intro
+# 1. Define your template requirements in detail
+# Edit PRPs/INITIAL.md with specific technology and requirements
 
-# 2. Set up your project rules (optional - template provided)
-# Edit CLAUDE.md to add your project-specific guidelines
+# 2. Generate comprehensive template PRP
+/generate-template-prp PRPs/INITIAL.md
 
-# 3. Add examples (highly recommended)
-# Place relevant code examples in the examples/ folder
-
-# 4. Create your initial feature request
-# Edit INITIAL.md with your feature requirements
-
-# 5. Generate a comprehensive PRP (Product Requirements Prompt)
-# In Claude Code, run:
-/generate-prp INITIAL.md
-
-# 6. Execute the PRP to implement your feature
-# In Claude Code, run:
-/execute-prp PRPs/your-feature-name.md
+# 3. Execute the PRP to create complete template package
+/execute-template-prp PRPs/template-{technology-name}.md
 ```
 
-## 📚 Table of Contents
+## 📚 What This Creates
 
-- [What is Context Engineering?](#what-is-context-engineering)
-- [Template Structure](#template-structure)
-- [Step-by-Step Guide](#step-by-step-guide)
-- [Writing Effective INITIAL.md Files](#writing-effective-initialmd-files)
-- [The PRP Workflow](#the-prp-workflow)
-- [Using Examples Effectively](#using-examples-effectively)
-- [Best Practices](#best-practices)
+This meta-template generates complete context engineering template packages with:
 
-## What is Context Engineering?
-
-Context Engineering represents a paradigm shift from traditional prompt engineering:
-
-### Prompt Engineering vs Context Engineering
-
-**Prompt Engineering:**
-- Focuses on clever wording and specific phrasing
-- Limited to how you phrase a task
-- Like giving someone a sticky note
-
-**Context Engineering:**
-- A complete system for providing comprehensive context
-- Includes documentation, examples, rules, patterns, and validation
-- Like writing a full screenplay with all the details
-
-### Why Context Engineering Matters
-
-1. **Reduces AI Failures**: Most agent failures aren't model failures - they're context failures
-2. **Ensures Consistency**: AI follows your project patterns and conventions
-3. **Enables Complex Features**: AI can handle multi-step implementations with proper context
-4. **Self-Correcting**: Validation loops allow AI to fix its own mistakes
-
-## Template Structure
-
+### Generated Template Structure
 ```
-context-engineering-intro/
-├── .claude/
-│   ├── commands/
-│   │   ├── generate-prp.md    # Generates comprehensive PRPs
-│   │   └── execute-prp.md     # Executes PRPs to implement features
-│   └── settings.local.json    # Claude Code permissions
+use-cases/{technology-name}/
+├── CLAUDE.md                          # Technology-specific global rules
+├── .claude/commands/
+│   ├── generate-{tech}-prp.md        # Domain PRP generation
+│   └── execute-{tech}-prp.md         # Domain PRP execution
 ├── PRPs/
 │   ├── templates/
-│   │   └── prp_base.md       # Base template for PRPs
-│   └── EXAMPLE_multi_agent_prp.md  # Example of a complete PRP
-├── examples/                  # Your code examples (critical!)
-├── CLAUDE.md                 # Global rules for AI assistant
-├── INITIAL.md               # Template for feature requests
-├── INITIAL_EXAMPLE.md       # Example feature request
-└── README.md                # This file
+│   │   └── prp_{tech}_base.md        # Technology-specific base PRP
+│   ├── ai_docs/                      # Domain documentation
+│   └── INITIAL.md                    # Example feature request
+├── examples/                         # Technology-specific examples
+└── README.md                         # Usage guide
 ```
 
-This template doesn't focus on RAG and tools with context engineering because I have a LOT more in store for that soon. ;)
+### Template Features
 
-## Step-by-Step Guide
+**Technology Specialization:**
+- Framework-specific global rules and patterns
+- Technology-appropriate validation loops
+- Domain-specific research methodologies
+- Framework-specialized documentation references
 
-### 1. Set Up Global Rules (CLAUDE.md)
+**Web Research Integration:**
+- Extensive web search requirements for technology research
+- Official documentation gathering and analysis
+- Real-world pattern identification and extraction
+- Best practices and gotcha documentation
 
-The `CLAUDE.md` file contains project-wide rules that the AI assistant will follow in every conversation. The template includes:
+**Context Engineering Adaptation:**
+- PRP framework adapted for specific technologies
+- Domain-appropriate success criteria
+- Technology-specific implementation blueprints
+- Framework-specialized validation gates
 
-- **Project awareness**: Reading planning docs, checking tasks
-- **Code structure**: File size limits, module organization
-- **Testing requirements**: Unit test patterns, coverage expectations
-- **Style conventions**: Language preferences, formatting rules
-- **Documentation standards**: Docstring formats, commenting practices
+## 🔍 Research-Driven Approach
 
-**You can use the provided template as-is or customize it for your project.**
+This meta-template emphasizes **extensive web research** as the foundation for creating high-quality templates:
 
-### 2. Create Your Initial Feature Request
+1. **Technology Deep Dive** - Comprehensive research of official docs, patterns, and best practices
+2. **Pattern Extraction** - Identification of real-world implementation patterns
+3. **Context Integration** - Adaptation of context engineering principles for the technology
+4. **Validation Design** - Creation of technology-appropriate testing and validation loops
 
-Edit `INITIAL.md` to describe what you want to build:
+## 📋 Usage Process
 
-```markdown
-## FEATURE:
-[Describe what you want to build - be specific about functionality and requirements]
+### 1. Define Requirements (PRPs/INITIAL.md)
 
-## EXAMPLES:
-[List any example files in the examples/ folder and explain how they should be used]
+Be extremely specific about:
+- **Target technology/framework**
+- **Core features to support**
+- **Examples to include**
+- **Documentation to research**
+- **Development patterns**
+- **Security considerations**
+- **Common gotchas**
+- **Validation requirements**
 
-## DOCUMENTATION:
-[Include links to relevant documentation, APIs, or MCP server resources]
-
-## OTHER CONSIDERATIONS:
-[Mention any gotchas, specific requirements, or things AI assistants commonly miss]
-```
-
-**See `INITIAL_EXAMPLE.md` for a complete example.**
-
-### 3. Generate the PRP
-
-PRPs (Product Requirements Prompts) are comprehensive implementation blueprints that include:
-
-- Complete context and documentation
-- Implementation steps with validation
-- Error handling patterns
-- Test requirements
-
-They are similar to PRDs (Product Requirements Documents) but are crafted more specifically to instruct an AI coding assistant.
-
-Run in Claude Code:
-```bash
-/generate-prp INITIAL.md
-```
-
-**Note:** The slash commands are custom commands defined in `.claude/commands/`. You can view their implementation:
-- `.claude/commands/generate-prp.md` - See how it researches and creates PRPs
-- `.claude/commands/execute-prp.md` - See how it implements features from PRPs
-
-The `$ARGUMENTS` variable in these commands receives whatever you pass after the command name (e.g., `INITIAL.md` or `PRPs/your-feature.md`).
-
-This command will:
-1. Read your feature request
-2. Research the codebase for patterns
-3. Search for relevant documentation
-4. Create a comprehensive PRP in `PRPs/your-feature-name.md`
-
-### 4. Execute the PRP
-
-Once generated, execute the PRP to implement your feature:
+### 2. Generate Template PRP
 
 ```bash
-/execute-prp PRPs/your-feature-name.md
+/generate-template-prp PRPs/INITIAL.md
 ```
 
-The AI coding assistant will:
-1. Read all context from the PRP
-2. Create a detailed implementation plan
-3. Execute each step with validation
-4. Run tests and fix any issues
-5. Ensure all success criteria are met
+This will:
+- Conduct extensive web research on your specified technology
+- Analyze official documentation and best practices
+- Create comprehensive implementation blueprint
+- Design technology-specific validation loops
 
-## Writing Effective INITIAL.md Files
+### 3. Execute Template Generation
 
-### Key Sections Explained
-
-**FEATURE**: Be specific and comprehensive
-- ❌ "Build a web scraper"
-- ✅ "Build an async web scraper using BeautifulSoup that extracts product data from e-commerce sites, handles rate limiting, and stores results in PostgreSQL"
-
-**EXAMPLES**: Leverage the examples/ folder
-- Place relevant code patterns in `examples/`
-- Reference specific files and patterns to follow
-- Explain what aspects should be mimicked
-
-**DOCUMENTATION**: Include all relevant resources
-- API documentation URLs
-- Library guides
-- MCP server documentation
-- Database schemas
-
-**OTHER CONSIDERATIONS**: Capture important details
-- Authentication requirements
-- Rate limits or quotas
-- Common pitfalls
-- Performance requirements
-
-## The PRP Workflow
-
-### How /generate-prp Works
-
-The command follows this process:
-
-1. **Research Phase**
-   - Analyzes your codebase for patterns
-   - Searches for similar implementations
-   - Identifies conventions to follow
-
-2. **Documentation Gathering**
-   - Fetches relevant API docs
-   - Includes library documentation
-   - Adds gotchas and quirks
-
-3. **Blueprint Creation**
-   - Creates step-by-step implementation plan
-   - Includes validation gates
-   - Adds test requirements
-
-4. **Quality Check**
-   - Scores confidence level (1-10)
-   - Ensures all context is included
-
-### How /execute-prp Works
-
-1. **Load Context**: Reads the entire PRP
-2. **Plan**: Creates detailed task list using TodoWrite
-3. **Execute**: Implements each component
-4. **Validate**: Runs tests and linting
-5. **Iterate**: Fixes any issues found
-6. **Complete**: Ensures all requirements met
-
-See `PRPs/EXAMPLE_multi_agent_prp.md` for a complete example of what gets generated.
-
-## Using Examples Effectively
-
-The `examples/` folder is **critical** for success. AI coding assistants perform much better when they can see patterns to follow.
-
-### What to Include in Examples
-
-1. **Code Structure Patterns**
-   - How you organize modules
-   - Import conventions
-   - Class/function patterns
-
-2. **Testing Patterns**
-   - Test file structure
-   - Mocking approaches
-   - Assertion styles
-
-3. **Integration Patterns**
-   - API client implementations
-   - Database connections
-   - Authentication flows
-
-4. **CLI Patterns**
-   - Argument parsing
-   - Output formatting
-   - Error handling
-
-### Example Structure
-
-```
-examples/
-├── README.md           # Explains what each example demonstrates
-├── cli.py             # CLI implementation pattern
-├── agent/             # Agent architecture patterns
-│   ├── agent.py      # Agent creation pattern
-│   ├── tools.py      # Tool implementation pattern
-│   └── providers.py  # Multi-provider pattern
-└── tests/            # Testing patterns
-    ├── test_agent.py # Unit test patterns
-    └── conftest.py   # Pytest configuration
+```bash
+/execute-template-prp PRPs/template-{technology-name}.md
 ```
 
-## Best Practices
+This will:
+- Create complete template package directory structure
+- Generate technology-specific CLAUDE.md with global rules
+- Create specialized PRP commands for the technology
+- Develop domain-specific base PRP template
+- Include working examples and comprehensive documentation
 
-### 1. Be Explicit in INITIAL.md
-- Don't assume the AI knows your preferences
-- Include specific requirements and constraints
-- Reference examples liberally
+## 🎯 Template Quality Standards
 
-### 2. Provide Comprehensive Examples
-- More examples = better implementations
-- Show both what to do AND what not to do
-- Include error handling patterns
+Generated templates include:
 
-### 3. Use Validation Gates
-- PRPs include test commands that must pass
-- AI will iterate until all validations succeed
-- This ensures working code on first try
+**Comprehensive Research Foundation:**
+- Extensive web research on target technology
+- Official documentation analysis and integration
+- Real-world pattern identification
+- Best practices and gotcha documentation
 
-### 4. Leverage Documentation
-- Include official API docs
-- Add MCP server resources
-- Reference specific documentation sections
+**Technology Specialization:**
+- Framework-specific patterns and conventions
+- Domain-appropriate architectural guidance
+- Technology-specific validation and testing approaches
+- Integration patterns for common use cases
 
-### 5. Customize CLAUDE.md
-- Add your conventions
-- Include project-specific rules
-- Define coding standards
+**Context Engineering Integration:**
+- Proper adaptation of PRP framework principles
+- Technology-appropriate success criteria
+- Domain-specific research methodologies
+- Specialized validation loops and quality gates
 
-## Resources
+## 🔧 Key Features
 
-- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
-- [Context Engineering Best Practices](https://www.philschmid.de/context-engineering)
+### Web Research Emphasis
+- **Web search is your best friend** throughout the process
+- Comprehensive technology documentation analysis
+- Real-world implementation pattern identification
+- Community best practices research and integration
+
+### Template Package Completeness
+- Complete directory structure with all required files
+- Technology-specific global rules and patterns
+- Specialized PRP generation and execution commands
+- Domain-appropriate base PRP templates
+- Working examples and comprehensive documentation
+
+### Quality Validation
+- Multiple validation levels for template structure and content
+- Technology-specific testing and validation approaches
+- Integration testing with base context engineering framework
+- Usability validation for immediate developer productivity
+
+## 📚 Examples of Templates You Can Generate
+
+- **Pydantic AI Agents** - AI agent development with tool integration
+- **Supabase Applications** - Full-stack apps with real-time features
+- **CrewAI Multi-Agents** - Complex multi-agent system development
+- **FastAPI Services** - High-performance API development
+- **React Applications** - Modern frontend development patterns
+- **Any Technology** - The system adapts to any framework or library
+
+## 🚫 Anti-Patterns Avoided
+
+- ❌ Generic templates without technology specialization
+- ❌ Shallow research leading to incomplete patterns
+- ❌ Missing validation loops and quality gates
+- ❌ Ignoring framework-specific best practices
+- ❌ Incomplete documentation and examples
+
+## 🔄 Continuous Improvement
+
+Templates generated with this system:
+- Are based on comprehensive, current research
+- Include real-world patterns and best practices
+- Provide immediate developer productivity
+- Can be updated as technologies evolve
+- Maintain consistency with context engineering principles
+
+## 🎓 Philosophy
+
+This meta-template embodies the principle that **context engineering can be applied to any technology domain** through:
+
+1. **Deep Research** - Understanding the technology thoroughly
+2. **Pattern Extraction** - Identifying reusable implementation patterns
+3. **Context Integration** - Adapting context engineering principles
+4. **Quality Validation** - Ensuring templates work immediately and effectively
+
+The result is a systematic approach to creating high-quality, immediately usable context engineering templates for any technology domain.

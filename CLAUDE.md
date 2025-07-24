@@ -1,59 +1,76 @@
-### 🔄 Project Awareness & Context
-- **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
-- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
-- **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
-- **Use venv_linux** (the virtual environment) whenever executing Python commands, including for unit tests.
+# Template Generator - Global Rules for Context Engineering
 
-### 🧱 Code Structure & Modularity
-- **Never create a file longer than 500 lines of code.** If a file approaches this limit, refactor by splitting it into modules or helper files.
-- **Organize code into clearly separated modules**, grouped by feature or responsibility.
-  For agents this looks like:
-    - `agent.py` - Main agent definition and execution logic 
-    - `tools.py` - Tool functions used by the agent 
-    - `prompts.py` - System prompts
-- **Use clear, consistent imports** (prefer relative imports within packages).
-- **Use clear, consistent imports** (prefer relative imports within packages).
-- **Use python_dotenv and load_env()** for environment variables.
+This file contains the global rules and principles that apply to ALL context engineering work, regardless of what template or project you're building. These rules never change and should be followed consistently.
 
-### 🧪 Testing & Reliability
-- **Always create Pytest unit tests for new features** (functions, classes, routes, etc).
-- **After updating any logic**, check whether existing unit tests need to be updated. If so, do it.
-- **Tests should live in a `/tests` folder** mirroring the main app structure.
-  - Include at least:
-    - 1 test for expected use
-    - 1 edge case
-    - 1 failure case
+## 🔄 Context Engineering Core Principles
 
-### ✅ Task Completion
-- **Mark completed tasks in `TASK.md`** immediately after finishing them.
-- Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
+**IMPORTANT: These principles apply to ALL context engineering work:**
 
-### 📎 Style & Conventions
-- **Use Python** as the primary language.
-- **Follow PEP8**, use type hints, and format with `black`.
-- **Use `pydantic` for data validation**.
-- Use `FastAPI` for APIs and `SQLAlchemy` or `SQLModel` for ORM if applicable.
-- Write **docstrings for every function** using the Google style:
-  ```python
-  def example():
-      """
-      Brief summary.
+### PRP Framework Workflow
+- **Always start with INITIAL.md** - Define requirements before generating PRPs
+- **Use the PRP pattern**: INITIAL.md → `/generate-template-prp INITIAL.md` → `/execute-template-prp PRPs/filename.md`
+- **Follow validation loops** - Each PRP must include executable validation steps
+- **Context is King** - Include ALL necessary documentation, examples, and patterns
 
-      Args:
-          param1 (type): Description.
+### Research Methodology
+- **Web search first** - Always do extensive web research before implementation
+- **Documentation deep dive** - Study official docs, best practices, and common patterns
+- **Pattern extraction** - Identify reusable patterns and architectural conventions
+- **Gotcha documentation** - Document common pitfalls and edge cases
 
-      Returns:
-          type: Description.
-      """
-  ```
+## 📚 Project Awareness & Context
 
-### 📚 Documentation & Explainability
-- **Update `README.md`** when new features are added, dependencies change, or setup steps are modified.
-- **Comment non-obvious code** and ensure everything is understandable to a mid-level developer.
-- When writing complex logic, **add an inline `# Reason:` comment** explaining the why, not just the what.
+- **Use consistent naming conventions** and file structure patterns
+- **Follow established directory organization** patterns
+- **Leverage examples extensively** - Study existing patterns before creating new ones
 
-### 🧠 AI Behavior Rules
-- **Never assume missing context. Ask questions if uncertain.**
-- **Never hallucinate libraries or functions** – only use known, verified Python packages.
-- **Always confirm file paths and module names** exist before referencing them in code or tests.
-- **Never delete or overwrite existing code** unless explicitly instructed to or if part of a task from `TASK.md`.
+## 🧱 Code Structure & Modularity
+
+- **Never create files longer than 500 lines** - Split into modules when approaching limit
+- **Organize code into clearly separated modules** grouped by feature or responsibility
+- **Use clear, consistent imports** (prefer relative imports within packages)
+- **Follow established coding standards** and conventions
+
+## ✅ Task Management
+
+- **Break complex tasks into smaller steps** with clear completion criteria
+- **Mark tasks complete immediately** after finishing them
+- **Update task status in real-time** as work progresses
+
+## 📎 Documentation Standards
+
+- **Write comprehensive documentation** for every component
+- **Include clear usage examples** with working code
+- **Document all gotchas and edge cases** to prevent common errors
+- **Maintain up-to-date references** to external documentation
+
+## 🔍 Research Standards
+
+- **Web search is your best friend** - Use it extensively for technology research
+- **Study official documentation thoroughly** before implementation
+- **Research established patterns** and best practices for the technology
+- **Document all findings comprehensively** in PRPs and implementation guides
+
+## 🎯 Implementation Standards
+
+- **Follow the PRP workflow religiously** - Don't skip steps
+- **Always validate before proceeding** to the next step
+- **Use existing patterns as templates** rather than creating from scratch
+- **Include comprehensive error handling** in all implementations
+
+## 🚫 Anti-Patterns to Always Avoid
+
+- ❌ Don't skip research - Always understand the technology deeply first
+- ❌ Don't create generic solutions - Always specialize for the specific use case
+- ❌ Don't ignore validation - Every step must include verification
+- ❌ Don't assume knowledge - Document everything explicitly
+- ❌ Don't skip examples - Always include working code examples
+- ❌ Don't forget edge cases - Include error handling and gotchas
+
+## 🔧 Tool Usage Standards
+
+- **Use web search extensively** for research and documentation
+- **Follow established command patterns** for slash commands
+- **Use validation loops** to ensure quality at each step
+
+These global rules apply regardless of whether you're generating templates, implementing features, or doing research. They form the foundation of effective context engineering work.

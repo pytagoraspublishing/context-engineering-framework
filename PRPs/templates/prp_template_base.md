@@ -44,11 +44,11 @@ Generate a complete context engineering template package for **[TARGET_TECHNOLOG
 use-cases/{technology-name}/
 ├── CLAUDE.md                      # Domain implementation guide
 ├── .claude/commands/
-│   ├── generate-{technology}-prp.md  # Domain PRP generation
-│   └── execute-{technology}-prp.md   # Domain PRP execution  
+│   ├── generate-{technology-name}-prp.md  # Domain PRP generation
+│   └── execute-{technology-name}-prp.md   # Domain PRP execution  
 ├── PRPs/
 │   ├── templates/
-│   │   └── prp_{technology}_base.md  # Domain base PRP template
+│   │   └── prp_{technology-name}_base.md  # Domain base PRP template
 │   ├── ai_docs/                      # Domain documentation (optional)
 │   └── INITIAL.md                    # Example feature request
 ├── examples/                         # Domain code examples
@@ -86,16 +86,16 @@ use-cases/{technology-name}/
 
 ```yaml
 # CONTEXT ENGINEERING FOUNDATION - Understand the base framework
-- file: ../../../README.md
+- file: ../../base/README.md
   why: Core context engineering principles and workflow to adapt
 
-- file: ../../../.claude/commands/generate-prp.md
+- file: ../../base/.claude/commands/generate-prp.md
   why: Base PRP generation patterns to specialize for domain
 
-- file: ../../../.claude/commands/execute-prp.md  
+- file: ../../base/.claude/commands/execute-prp.md  
   why: Base PRP execution patterns to adapt for technology
 
-- file: ../../../PRPs/templates/prp_base.md
+- file: ../../base/PRPs/templates/prp_base.md
   why: Base PRP template structure to specialize for domain
 
 # MCP SERVER EXAMPLE - Reference implementation of domain specialization
@@ -129,14 +129,17 @@ use-cases/{technology-name}/
 
 ```bash
 # Base framework structure to extend
-context-engineering-intro/
-├── README.md                    # Core principles to adapt
-├── .claude/commands/            # Base commands to specialize
-├── PRPs/templates/prp_base.md   # Base template to extend
-├── CLAUDE.md                    # Base rules to inherit
-└── use-cases/
-    ├── mcp-server/              # Reference specialization example
-    └── template-generator/      # This meta-template system
+context-engineering-framework/
+├── base/
+│   ├── README.md                    # Core principles to adapt
+│   ├── .claude/commands/            # Base commands to specialize
+│   ├── PRPs/templates/prp_base.md   # Base template to extend
+│   ├── CLAUDE.md                    # Base rules to inherit
+│   ├── INITIAL.md                   # Base feature request template
+│   ├── INITIAL_EXAMPLE.md           # Example feature request template
+├── use-cases/
+│   ├── mcp-server/                  # Reference specialization example
+│   └── template-generator/          # This meta-template system
 ```
 
 ### Target Technology Analysis Requirements
