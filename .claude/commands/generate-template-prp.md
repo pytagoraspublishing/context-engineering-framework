@@ -15,7 +15,7 @@ Generate a comprehensive PRP for creating context engineering templates for spec
    - Identify the scope and complexity of the template needed
 
 2. **Extensive Web Research (CRITICAL)**
-   - **Web search the target technology extensively** - this is essential
+   - **Web search with Ref MCP server the target technology extensively** - this is essential
    - Study official documentation, APIs, and getting started guides
    - Research best practices and common architectural patterns
    - Find real-world implementation examples and tutorials

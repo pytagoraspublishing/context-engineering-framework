@@ -46,7 +46,7 @@ This file contains the global rules and principles that apply to ALL context eng
 
 ## 🔍 Research Standards
 
-- **Web search is your best friend** - Use it extensively for technology research
+- **Jina MCP search is your best friend** - Use it extensively for technology research
 - **Study official documentation thoroughly** before implementation
 - **Research established patterns** and best practices for the technology
 - **Document all findings comprehensively** in PRPs and implementation guides
@@ -69,7 +69,7 @@ This file contains the global rules and principles that apply to ALL context eng
 
 ## 🔧 Tool Usage Standards
 
-- **Use web search extensively** for research and documentation
+- **Use Jina MCP web search extensively** for research and documentation
 - **Follow established command patterns** for slash commands
 - **Use validation loops** to ensure quality at each step
 
