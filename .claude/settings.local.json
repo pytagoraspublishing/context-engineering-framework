@@ -10,14 +10,8 @@
       "Bash(find:*)",
       "Bash(test:*)",
       "Bash(grep:*)",
-      "Bash(python:*)",
-      "mcp__Ref__ref_search_documentation",
-      "mcp__Ref__ref_read_url"
+      "Bash(python:*)"
     ],
     "deny": []
-  },
-  "enabledMcpjsonServers": [
-    "playwright",
-    "Ref"
-  ]
+  }
 }
